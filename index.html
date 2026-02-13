@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="sl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gold Deal Boxes</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="topInner">
+      <div class="brand">
+        <!-- daj logo-gold.png v isti folder kot index.html -->
+        <img class="brandLogo" src="logo-gold.png" alt="Logo" />
+        <div class="brandText">
+          <div class="brandTitle">DEAL • NO DEAL</div>
+          <div class="brandSub">Gold Edition — izberi svoj case, nato odpri ostale.</div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn ghost" id="btnHelp">Kako igrati</button>
+        <button class="btn" id="btnNew">Nova igra</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="stage">
+    <!-- LEFT PRIZES -->
+    <aside class="side left">
+      <div class="sideFrame">
+        <div class="sideTitle">Nagrade</div>
+        <ol class="moneyList" id="moneyLeft"></ol>
+      </div>
+    </aside>
+
+    <!-- CENTER BOARD -->
+    <section class="board">
+      <!-- big background logo -->
+      <img class="bgLogo" src="logo-gold.png" alt="" aria-hidden="true" />
+
+      <div class="boardFrame">
+        <div class="boardHead">
+          <div>
+            <div class="phase" id="phase">Select a case</div>
+            <div class="hint" id="hint">Klikni en case, da postane tvoj.</div>
+          </div>
+
+          <div class="yourCard" title="Tvoj izbran case">
+            <div class="yourIcon">🎁</div>
+            <div>
+              <div class="yourLabel">Your Case</div>
+              <div class="yourNum" id="yourNum">—</div>
+            </div>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <div class="statLabel">Odprto</div>
+              <div class="statValue" id="openedCount">0</div>
+            </div>
+            <div class="stat">
+              <div class="statLabel">Ostane</div>
+              <div class="statValue" id="leftCount">26</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid" id="grid"></div>
+
+        <div class="bottomBar">
+          <div class="bottomLeft">
+            <div class="miniCase">
+              <div class="miniCaseIcon">🎁</div>
+              <div class="miniCaseText">
+                <div class="miniTop">Tvoj case</div>
+                <div class="miniNum" id="miniYourNum">—</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bottomMsg" id="bottomMsg">
+            Welcome! Izberi case in začnemo.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RIGHT PRIZES -->
+    <aside class="side right">
+      <div class="sideFrame">
+        <div class="sideTitle">Nagrade</div>
+        <ol class="moneyList" id="moneyRight"></ol>
+      </div>
+    </aside>
+  </main>
+
+  <!-- HELP -->
+  <div class="modalBack" id="helpBack" aria-hidden="true"></div>
+  <div class="modal" id="helpModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modalTop">
+      <div class="modalTitle">Kako igrati</div>
+      <button class="x" data-close="help">✕</button>
+    </div>
+    <div class="modalBody">
+      <ol class="list">
+        <li>Klikni <b>en case</b> → to je tvoj.</li>
+        <li>Nato klikaj ostale case in jih <b>odpri</b> (animacija “vratca”).</li>
+        <li>Nagrada se bo na levi/desni <b>prečrtala</b>.</li>
+        <li>Ko ostane samo tvoj case, se pokaže tvoja nagrada.</li>
+      </ol>
+      <div class="small">Esc zapre okno.</div>
+    </div>
+    <div class="modalFoot">
+      <button class="btn" data-close="help">OK</button>
+    </div>
+  </div>
+
+  <!-- END -->
+  <div class="modalBack" id="endBack" aria-hidden="true"></div>
+  <div class="modal" id="endModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modalTop">
+      <div class="modalTitle">Razkritje 👑</div>
+      <button class="x" data-close="end">✕</button>
+    </div>
+    <div class="modalBody">
+      <div class="bigMoney" id="endMoney">—</div>
+      <div class="small" id="endLine">—</div>
+      <button class="btn" id="btnAgain">Igraj znova</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
